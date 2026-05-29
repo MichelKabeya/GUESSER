@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.toColorInt
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         guessBtn.setOnClickListener {
             val userGuess = guess.text.toString().toInt()
             if (userGuess == randomNumber) {
+                textResult.setTextColor("#04FA0F".toColorInt())
                 textResult.text = "Congratulations! You guessed the number."
             } else if (userGuess < randomNumber) {
                 textResult.text = "The number is higher."
